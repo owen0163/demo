@@ -3,5 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("hello")
+
+	var n int = 10
+	var s string = "hellow"
+	fmt.Println(n, s)
 }
