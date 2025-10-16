@@ -58,13 +58,25 @@ import "fmt"
 // 	fmt.Println("Value of myName after appendGreeting():", myName)
 // }
 
+// func main() {
+// 	var n int
+// 	var p = &n
+// 	m := *p
+// 	inc(p)
+// 	fmt.Println(m)
+// }
+// func inc(p *int) {
+// 	*p++
+// }
+
+const (
+	byte = 1 << (iota * 10)
+	kb
+	mb
+)
+
 func main() {
-	var n int
-	var p = &n
-	m := *p
-	inc(p)
-	fmt.Println(m)
-}
-func inc(p *int) {
-	*p++
+	fmt.Println(byte)
+	fmt.Println(kb)
+	fmt.Println(mb)
 }
