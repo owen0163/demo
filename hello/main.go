@@ -68,15 +68,36 @@ import "fmt"
 // func inc(p *int) {
 // 	*p++
 // }
+////////////////////////////////////////////////// Constants /////////////////////////////////////////////
+// const (
+// 	byte = 1 << (iota * 10)
+// 	kb
+// 	mb
+// )
 
-const (
-	byte = 1 << (iota * 10)
-	kb
-	mb
-)
-
+//	func main() {
+//		fmt.Println(byte)
+//		fmt.Println(kb)
+//		fmt.Println(mb)
+//	}
+//
+// /////////////////////////////////// functions //////////////////////////////
 func main() {
-	fmt.Println(byte)
-	fmt.Println(kb)
-	fmt.Println(mb)
+	// fmt.Println(add(1, "owen"))
+	// fmt.Println(add(1, 2))
+	fmt.Println(min(1, 2))
+}
+
+// func add(a int, name string) (int, string) {
+// 	return a, name
+// }
+
+//	func add(a, b int) int {
+//		return a + b
+//	}
+func min(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
 }
