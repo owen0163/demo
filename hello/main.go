@@ -95,9 +95,16 @@ func main() {
 //	func add(a, b int) int {
 //		return a + b
 //	}
-func min(a, b int) int {
-	if a < b {
-		return a
-	}
-	return b
+// func min(a, b int) int {
+// 	if a < b {
+// 		return a
+// 	}
+// 	return b
+// }
+
+func main() {
+	fmt.Println(greeting("pallat"))
+}
+func greeting(name string) string {
+	return fmt.Sprintf("Hello, %s", name)
 }
