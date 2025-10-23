@@ -82,11 +82,11 @@ import "fmt"
 //	}
 //
 // /////////////////////////////////// functions //////////////////////////////
-func main() {
-	// fmt.Println(add(1, "owen"))
-	// fmt.Println(add(1, 2))
-	fmt.Println(min(1, 2))
-}
+// func main() {
+// 	// fmt.Println(add(1, "owen"))
+// 	// fmt.Println(add(1, 2))
+// 	fmt.Println(min(1, 2))
+// }
 
 // func add(a int, name string) (int, string) {
 // 	return a, name
