@@ -101,10 +101,113 @@ import "fmt"
 // 	}
 // 	return b
 // }
+//****************************************************************************
+// func main() {
+// 	// fmt.Println(greeting("pallat"))
+// 	// fmt.Println(greetingWithAge("pallat", 30))
+// 	// fmt.Println(greetingWithAgeAndDrink("pallat", 30, "cola"))
+// }
+
+// // greeting("Pallat") should return "Hello, Pallat"
+//
+//	func greeting(name string) string {
+//		return fmt.Sprintf("Hello, %s", name)
+//	}
+//
+// ***********************************************************************
+// greetingWithAge("Pallat", 30) should return "Hello, Pallat. You are 30 years old."
+//
+//	func greetingWithAge(name string, age uint) string {
+//		return fmt.Sprintf("Hello, %s. You are %d years old.", name, age)
+//	}
+//
+// ***********************************************************************
+// greetingWithAgeAndDrink("Pallat", 30, "Cola") should return "Hello, Pallat. You are 30 years old and your favorite drink is Cola."
+// func greetingWithAgeAndDrink(name string, age uint, drink string) string {
+// 	return fmt.Sprintf("Hello, %s. You are %d years old and your favorite drink is %s.", name, age, drink)
+// }
+
+// ***********************************************************************
+
+// func main() {
+// 	var age int
+// 	fmt.Scanln(&age)
+
+// 	year := time.Now().Year()
+// 	yearOFBirth := year - age
+
+// 	if yearOFBirth > 2012 {
+// 		fmt.Println("young")
+// 	} else if yearOFBirth >= 1997 {
+// 		fmt.Println("GEN Z")
+// 	} else {
+// 		fmt.Println("HI senior")
+// 	}
+// }
+
+// ***********************************************************************
+
+// func main() {
+// 	var num int
+// 	fmt.Print("กรุณาป้อนจำนวนเต็ม: ")
+// 	fmt.Scanln(&num)
+// 	result := isOdd(num)
+
+// 	fmt.Printf("คุณป้อน: %d\n", num)
+// 	fmt.Printf("เป็นเลขคี่หรือไม่: %t\n", result)
+// }
+
+// func isOdd(n int) bool {
+// 	if n%2 != 0 {
+// 		return true
+// 	} else {
+// 		return false
+// 	}
+
+// }
+
+// ***********************************************************************
+
+// func main() {
+// 	var age int
+// 	fmt.Print("กรุณาป้อนจำนวนเต็ม: ")
+// 	fmt.Scanln(&age)
+
+// 	year := time.Now().Year()
+// 	yearOFBirth := year - age
+
+// 	switch {
+// 	case yearOFBirth > 2012:
+// 		fmt.Println("young")
+// 	case yearOFBirth >= 1997:
+// 		fmt.Println("GENZ")
+// 	default:
+// 		fmt.Println("Hi senior")
+// 	}
+// }
+
+// ******************************************************************************
 
 func main() {
-	fmt.Println(greeting("pallat"))
-}
-func greeting(name string) string {
-	return fmt.Sprintf("Hello, %s", name)
+	// for i := 0; i < 5; i++ {
+	// 	fmt.Println(i)
+	// }
+	//**********************************************
+	// var i := 0
+	// for i < 5 {
+	// 	fmt.Println(i)
+	// 	i++
+	// }
+	//*******************************************************
+	i := 0
+loop:
+	for {
+
+		if i < 5 {
+			fmt.Println(i)
+			i++
+		} else {
+			break loop
+		}
+	}
 }
