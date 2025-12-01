@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // func main() {
 // 	var a = [...]int{-1, 0, 1, 2, 3, 4}
@@ -48,19 +50,69 @@ import "fmt"
 // 	fmt.Print(s[2:5])
 // 	// * [coconut durian elderberries]
 // }
+//----------------------------------------------------------------------- variadic func
+// func main() {
+// 	max := maxInt(1, 10, 100, 1000)
 
-func main() {
-	max := maxInt(1, 10, 100, 1000)
+// 	fmt.Println(max)
+// }
 
-	fmt.Println(max)
+// func maxInt(nums ...int) int {
+// 	var max int
+// 	for _, v := range nums {
+// 		if v > max {
+// 			max = v
+// 		}
+// 	}
+// 	return max
+// }
+
+// ---------------------------------------------- map -----------------------------
+// func main() {
+// 	var m map[string]string
+
+// 	m = make(map[string]string)
+
+// 	m["a"] = "apple"
+// 	m["b"] = "banana"
+// 	m["c"] = "coconut"
+
+// 	for k, v := range m {
+// 		fmt.Println(k, v)
+// 	}
+
+// 	fmt.Println(m == nil)
+// }
+//-------------------------------------------------------------
+
+// func main() {
+// 	a := wordCount("Apple Banana Apple Banana apple")
+
+// 	fmt.Println(a["apple"])
+// }
+
+// func wordCount(s string) map[string]int {
+// 	split := strings.Split(s, " ")
+// 	result := map[string]int{}
+// 	for i := 0; i < len(split); i++ {
+// 		result[split[i]] = result[split[i]] + 1
+// 	}
+// 	return result
+// }
+
+// ------------------------------------------------------- structs-----------------------
+type rect struct {
+	w, d float64
 }
 
-func maxInt(nums ...int) int {
-	var max int
-	for _, v := range nums {
-		if v > max {
-			max = v
-		}
+func main() {
+	r := rect{
+		w: 3,
+		d: 4,
 	}
-	return max
+
+	area := r.w * r.d
+
+	fmt.Println(area)
+
 }
