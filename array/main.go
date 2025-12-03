@@ -101,10 +101,30 @@ import (
 // }
 
 // ------------------------------------------------------- structs-----------------------
+// type rect struct {
+// 	w, d float64
+// }
+
+// func main() {
+// 	r := rect{
+// 		w: 3,
+// 		d: 4,
+// 	}
+
+// 	area := r.w * r.d
+
+// 	fmt.Println(area)
+
+// }
+//--------------------------------------------------------------------------- methods--------------------------------------
+
 type rect struct {
 	w, d float64
 }
 
+func area(r rect) float64 {
+	return r.d * r.w
+}
 func main() {
 	r := rect{
 		w: 3,
