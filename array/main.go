@@ -258,3 +258,41 @@ package main
 // 	var t = triangularPrism{base: 3, attitude: 4, height: 2}
 // 	fmt.Println("Triangular Prism Volume:", VolumeOf(t))
 // }
+//------------------------------------------------- error ---------------------------------------------
+// type Account struct {
+// 	Name string `json:"name"`
+// }
+
+// func main() {
+// 	a := Account{
+// 		Name: "skooldio",
+// 	}
+
+// 	b, err := json.Marshal(&a)
+// 	if err != nil {
+// 		fmt.Println(err)
+// 		return
+// 	}
+// 	fmt.Println(string(b))
+// }
+
+// func validateLength(s string) bool {
+// 	if len([]rune(s)) < 8 {
+// 		return errors.New("too short string")
+// 	}
+// 	return true
+// }
+
+// var ageError = errors.New("your age is negative!")
+
+// func validateAge(n int) error {
+// 	if n < 0 {
+// 		return ageError
+// 	}
+// 	if n < 18 {
+// 		return fmt.Errorf("too young")
+// 	}
+// 	return nil
+// }
+
+//----------------------------------------------- packages------------------------------------
