@@ -2,20 +2,76 @@ package main
 
 import "fmt"
 
-type number interface {
-	~int | float64
+// type number interface {
+// 	~int | float64
+// }
+
+// func max[t number](a, b t) t {
+// 	if a > b {
+// 		return a
+// 	}
+// 	return b
+// }
+
+// type numeric int
+
+// func main() {
+// 	var a, b numeric = 100, 99
+// 	fmt.Println(max(a, b))
+// }
+//----------------------------   First Class Functions ------------------------------
+
+// type number interface {
+// 	~int | float64
+// }
+
+// func max[t number](a, b t) t {
+// 	if a > b {
+// 		return a
+// 	}
+// 	return b
+// }
+
+// type numeric int
+
+// func main() {
+// 	var a, b float64 = 100, 99
+
+// 	var maximun = max[float64]
+
+// 	fmt.Println(maximun(a, b))
+
+// 	fn := func() int {
+// 		return 10
+// 	}
+
+// 	fmt.Println(fn())
+// }
+
+//------------------------------------------ Closure Function ---------------------------------------------
+
+func oddEven(n int, fn func(int) bool) {
+	fmt.Println(fn(n))
 }
 
-func max[t number](a, b t) t {
-	if a > b {
-		return a
+func newCounter() func() int {
+	i := 0
+	return func() int {
+		i++
+		return i
 	}
-	return b
 }
-
-type numeric int
-
 func main() {
-	var a, b numeric = 10, 99
-	fmt.Println(max(a, b))
+	// isOdd := func(n int) bool {
+	// 	return n%2 == 1
+	// }
+	// isEven := func(n int) bool {
+	// 	return n&1 == 0
+	// }
+	// oddEven(5, isEven)
+	fn := newCounter()
+
+	fmt.Println(fn())
+	fmt.Println(fn())
+	fmt.Println(fn())
 }
