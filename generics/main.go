@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // type number interface {
 // 	~int | float64
 // }
@@ -50,28 +48,54 @@ import "fmt"
 
 //------------------------------------------ Closure Function ---------------------------------------------
 
-func oddEven(n int, fn func(int) bool) {
-	fmt.Println(fn(n))
-}
+// func oddEven(n int, fn func(int) bool) {
+// 	fmt.Println(fn(n))
+// }
 
-func newCounter() func() int {
-	i := 0
-	return func() int {
-		i++
-		return i
-	}
-}
-func main() {
-	// isOdd := func(n int) bool {
-	// 	return n%2 == 1
-	// }
-	// isEven := func(n int) bool {
-	// 	return n&1 == 0
-	// }
-	// oddEven(5, isEven)
-	fn := newCounter()
+// func newCounter() func() int {
+// 	i := 0
+// 	return func() int {
+// 		i++
+// 		return i
+// 	}
+// }
+// func main() {
+// isOdd := func(n int) bool {
+// 	return n%2 == 1
+// }
+// isEven := func(n int) bool {
+// 	return n&1 == 0
+// }
+// oddEven(5, isEven)
+// 	fn := newCounter()
 
-	fmt.Println(fn())
-	fmt.Println(fn())
-	fmt.Println(fn())
-}
+// 	fmt.Println(fn())
+// 	fmt.Println(fn())
+// 	fmt.Println(fn())
+// }
+//-------------------------------------Type Assertions and Switch type----------------------------------------------------
+
+// func main() {
+// 	var a any
+
+// 	a = 10
+
+// 	decision(a)
+// }
+
+// func decision(a any) {
+// if v, ok := a.(int); ok {
+// 	fmt.Println("it's int", v)
+// 	var n int
+// 	n = v
+// 	fmt.Println(n)
+// }
+// 	switch a.(type) {
+// 	case int:
+// 		fmt.Println("it's int")
+// 	default:
+// 		fmt.Println("unknown")
+// 	}
+// }
+
+//-----------------------------------------Defer-------------------------------------------------------
