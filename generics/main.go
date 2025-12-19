@@ -1,5 +1,10 @@
 package main
 
+import (
+	"fmt"
+	"time"
+)
+
 // type number interface {
 // 	~int | float64
 // }
@@ -97,5 +102,30 @@ package main
 // 		fmt.Println("unknown")
 // 	}
 // }
+//----------------------------------------------------------Defer-------------------------------------
+//----------------------------- Goroutine -------------------------------------------
 
-//-----------------------------------------Defer-------------------------------------------------------
+var i int
+
+func main() {
+	start := time.Now()
+	for range 5 {
+		go slow(func() {
+			fmt.Println(i)
+		})
+	}
+	for {
+		if i >= 5 {
+			break
+		}
+	}
+	fmt.Println(time.Since(start))
+}
+
+func slow(fn func()) {
+	time.Sleep(100 * time.Millisecond)
+	i++
+	fn()
+}
+
+//----------------------------Wait goroutines and Data Race---------------------------------------------
