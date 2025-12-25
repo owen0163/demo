@@ -1,10 +1,5 @@
 package main
 
-import (
-	"fmt"
-	"time"
-)
-
 // type number interface {
 // 	~int | float64
 // }
@@ -105,27 +100,115 @@ import (
 //----------------------------------------------------------Defer-------------------------------------
 //----------------------------- Goroutine -------------------------------------------
 
-var i int
+// var i int
 
-func main() {
-	start := time.Now()
-	for range 5 {
-		go slow(func() {
-			fmt.Println(i)
-		})
-	}
-	for {
-		if i >= 5 {
-			break
-		}
-	}
-	fmt.Println(time.Since(start))
-}
+// func main() {
+// 	start := time.Now()
+// 	for range 5 {
+// 		go slow(func() {
+// 			fmt.Println(i)
+// 		})
+// 	}
+// 	for {
+// 		if i >= 5 {
+// 			break
+// 		}
+// 	}
+// 	fmt.Println(time.Since(start))
+// }
 
-func slow(fn func()) {
-	time.Sleep(100 * time.Millisecond)
-	i++
-	fn()
-}
+// func slow(fn func()) {
+// 	time.Sleep(100 * time.Millisecond)
+// 	i++
+// 	fn()
+// }
 
 //----------------------------Wait goroutines and Data Race---------------------------------------------
+
+// var mux sync.Mutex
+// var i int
+
+// func main() {
+// 	start := time.Now()
+// 	for range 5 {
+// 		go slow(func() {
+// 			mux.Lock()
+// 			fmt.Println(i)
+// 			mux.Unlock()
+// 		})
+// 	}
+// 	for {
+// 		mux.Lock()
+// 		if i >= 5 {
+// 			break
+// 		}
+// 		mux.Unlock()
+// 	}
+// 	fmt.Println(time.Since(start))
+// }
+
+// func slow(fn func()) {
+// 	time.Sleep(100 * time.Millisecond)
+// 	mux.Lock()
+// 	i++
+// 	mux.Unlock()
+// 	fn()
+// }
+
+// type data struct {
+// 	i   int
+// 	mux sync.Mutex
+// }
+
+// var asset data
+
+// func main() {
+// 	start := time.Now()
+// 	for range 5 {
+// 		go slow(func() {
+// 			asset.mux.Lock()
+// 			fmt.Println(asset.i)
+// 			asset.mux.Unlock()
+// 		})
+// 	}
+// 	for {
+// 		asset.mux.Lock()
+// 		if asset.i >= 5 {
+// 			break
+// 		}
+// 		asset.mux.Unlock()
+// 	}
+// 	fmt.Println(time.Since(start))
+// }
+
+// func slow(fn func()) {
+// 	time.Sleep(100 * time.Millisecond)
+// 	asset.mux.Lock()
+// 	asset.i++
+// 	asset.mux.Unlock()
+// 	fn()
+// }
+
+// --------------------------------------- channel----------------------------------------------------
+// bufferchannel---------
+// func main() {
+// 	var ch chan int
+// 	ch = make(chan int, 1)
+// 	ch <- 9
+// 	<-ch
+// 	ch <- 10
+
+// 	fmt.Println(<-ch)
+// }
+
+// nobufferchannel------------------
+// func main() {
+// 	var ch chan int
+// 	ch = make(chan int)
+
+// 	go func() {
+// 		ch <- 9
+// 	}()
+
+// 	fmt.Println(<-ch)
+// }
